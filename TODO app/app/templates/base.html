@@ -1,0 +1,44 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    {%block head%} {%endblock%}
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./static/css/login.css">
+
+    {%if title%}
+    <title>{{title}} TODO application</title>
+    {%else%}
+    <title>Welcome to your TODO List</title>
+    {%endif%}
+
+  </head>
+  <body class="bg-secondary">
+  <!-- <body > -->
+
+
+    <!-- ADD A DARK NAVBAR HERE WITH A LINK TO A SEPARATE SIGN UP PAGE -->
+
+
+    <nav class="navbar navbar-dark bg-dark mb-5">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand mb-0 h1" href="#">TODO List</a>
+        <a class="navbar-brand mb-0 h1" href="/index">Home</a>
+
+        </div>
+        <ul class="nav navbar-nav h6">
+          <li><a href="/addItem">ADD TODO</a></li>
+        </ul>
+      </div>
+    </nav>
+    <br>
+    
+    {%block content%} {%endblock%}
+  </body>
+</html>

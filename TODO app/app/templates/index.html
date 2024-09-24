@@ -1,0 +1,41 @@
+
+{%extends "base.html"%}
+
+
+{%block content%}
+<div class="container w-50">
+  <div class="jumbotron p-5 shadow">
+    <h1 class="mb-4 text-center"> LISTA </h1>
+    {%if items%}
+      <div class="list-group">
+        {% for i in items %}
+        <a  href="{{ url_for('modifyItem',id= i.getId() )}}"  class="list-group-item list-group-item-action " data-toggle="tooltip" data-placement="top" title="modifica">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1"><b>{{i.getTitle().upper()}}</b></h5>
+            {%if i.getDone()=="incompleto"%}
+              <span class="badge badge-primary badge-pill mb-2 float-right">
+              {{i.getDone()}}
+              </span>
+            {%else%}
+              <span class="badge badge-primary badge-pill badge-success mb-2 float-right">
+                {{i.getDone()}}
+              </span>
+            {%endif%}
+          </div>
+          <p class="mb-2 mt-2">{{i.getText()}}</p>
+          <small>{{i.getDate()}}</small>
+          <a href="{{ url_for('delete',id= i.getId() )}}"class="badge badge-danger mb-2 float-right">delete</a>
+        </a>
+        {% endfor %}
+      </div>
+      {% else %}
+      <br>
+      <div class="alert alert-dark text-center" role="alert">
+        Lista vuota, inserisci elementi
+      </div>
+     {%endif%}
+  </div>
+</div>
+
+
+{%endblock%}
